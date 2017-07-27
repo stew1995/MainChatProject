@@ -1,14 +1,14 @@
 <?php
 
-session_status();
+session_start();
 if(isset($_POST['login'])) {
 //Database connection
     require_once 'database.php';
 
     $email = $_POST['email'];
     $password = $_POST['password'];
-
-    $select_data = mysqli_query("select * from user where email='$email' and password='$password'");
+    $sql = "SELECT * FROM user WHERE email='$email' AND password='$password'";
+    $select_data = mysqli_query($conn,$sql);
 
     if($row = mysqli_fetch_array($select_data)) {
         $_SESSION['email'] = $row['email'];
