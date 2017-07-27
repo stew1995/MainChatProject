@@ -30,3 +30,32 @@ function login() {
 
     return false;
 }
+
+function register() {
+    var email = $("#emailInput").val();
+    var pass = $("#passwordInput").val();
+
+    if(email != "" && pass !="") {
+
+        $.ajax({
+            type:'post',
+            url:'php/register.php',
+            data: {
+                register: "register",
+                email: email,
+                password: pass
+            },
+            success: function (response) {
+                if(response == "success") {
+                    window.location.href = "registrationComfirm.php";
+                } else {
+                    //Loading none
+                    alert("Email already taken");
+                }
+            }
+        });
+    } else {
+        alert("Fill in all details");
+    }
+
+}
