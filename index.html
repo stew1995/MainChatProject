@@ -11,36 +11,43 @@
 
     <div class="container-fluid">
         <div class="row">
-            <!--Top Image-->
-            <img src="img/space.jpg" width="100%" height="500px">
-        </div>
-        <div class="row">
-            <!--Left Section-->
-            <div class="col-md-6 red">What do to put here</div>
-            <!--Sign In Section-->
-            <div class="col-md-6">Sign In
-                <!--Sign in Form-->
-                <div class="signInContainor">
-                    <!--Post data using AJAX
-                    login() validates data and sends it to the backend-->
-                    <form method="post" action="php/register.php" onsubmit="return register();">
-                        <div class="form-group">
-                            <label for="emailInput">Email</label>
-                            <input type="email" class="form-control" id="emailInput" placeholder="Email Address">
-                        </div>
-                        <div class="form-group">
-                            <label for="passwordInput">Password</label>
-                            <input type="password" class="form-control" id="passwordInput" placeholder="Password">
-                        </div>
-                        <button type="submit" class="btn btn-outline-primary" name="signInButton">Sign In</button>
-                        <button type="submit" class="btn btn-outline-primary" name="signUpButton">Register</button>
-                    </form>
+            <!--Main section container -->
+            <div class="offset-md-2 col-md-8 ">
+                <div class="row">
+                    <!--Top Image-->
+                    <img src="img/space.jpg" width="100%" height="500px">
                 </div>
+                <div class="row">
+                    <!--Left Section-->
+                    <div class="col-md-6 red">What do to put here</div>
+                    <!--Sign In Section-->
+                    <div class="col-md-6">Sign In
+                        <!--Sign in Form-->
+                        <div class="signInContainor">
+                            <!--Post data using AJAX
+                            login() validates data and sends it to the backend-->
+                            <form method="post" action="php/login.php" onsubmit="return login();">
+                                <div class="form-group">
+                                    <label for="emailInput">Email</label>
+                                    <input type="email" class="form-control" id="emailInput" placeholder="Email Address">
+                                </div>
+                                <div class="form-group">
+                                    <label for="passwordInput">Password</label>
+                                    <input type="password" class="form-control" id="passwordInput" placeholder="Password">
+                                </div>
+                                <button type="submit" class="btn btn-outline-primary" name="signInButton">Sign In</button>
+                                <button type="submit" class="btn btn-outline-primary" name="signUpButton" onclick="return register()">Register</button>
+                            </form>
+                        </div>
 
 
 
+                    </div>
+                </div>
             </div>
         </div>
+
+
     </div>
 
 

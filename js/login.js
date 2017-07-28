@@ -39,7 +39,7 @@ function register() {
 
         $.ajax({
             type:'post',
-            url:'php/register.php',
+            url:'php/login.php',
             data: {
                 register: "register",
                 email: email,
@@ -47,7 +47,7 @@ function register() {
             },
             success: function (response) {
                 if(response == "success") {
-                    window.location.href = "index.php";
+                    window.location.href = "registerConfirm.html";
                 } else {
                     //Loading none
                     alert("Email already taken");

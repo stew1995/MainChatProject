@@ -16,9 +16,24 @@ if(isset($_POST['login'])) {
     } else {
         echo "failed";
     }
-    exit();
-} else if (isset($_POST['signUpButton'])) {
-    //Code for register
+    //Close conenction
+    mysqli_close($conn);
+} else if(isset($_POST['register'])) {
+    //Database connection
+    require_once 'database.php';
+
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    $sql = "INSERT INTO user (email, password) VALUES('".$email."', '".$password."')";
+
+    if(mysqli_query($conn, $sql)) {
+        echo"success";
+    } else {
+        echo "failed";
+    }
+    //Close connection
+    mysqli_close($conn);
 } else {
     //Error
 }
