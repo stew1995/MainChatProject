@@ -47,7 +47,7 @@ function register() {
             },
             success: function (response) {
                 if(response == "success") {
-                    window.location.href = "registrationComfirm.php";
+                    window.location.href = "index.php";
                 } else {
                     //Loading none
                     alert("Email already taken");

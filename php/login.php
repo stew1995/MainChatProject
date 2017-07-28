@@ -17,6 +17,10 @@ if(isset($_POST['login'])) {
         echo "failed";
     }
     exit();
+} else if (isset($_POST['signUpButton'])) {
+    //Code for register
+} else {
+    //Error
 }
 
 

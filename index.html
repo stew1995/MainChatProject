@@ -23,7 +23,7 @@
                 <div class="signInContainor">
                     <!--Post data using AJAX
                     login() validates data and sends it to the backend-->
-                    <form method="post" action="php/login.php" onsubmit="return login();">
+                    <form method="post" action="php/register.php" onsubmit="return register();">
                         <div class="form-group">
                             <label for="emailInput">Email</label>
                             <input type="email" class="form-control" id="emailInput" placeholder="Email Address">
@@ -32,8 +32,8 @@
                             <label for="passwordInput">Password</label>
                             <input type="password" class="form-control" id="passwordInput" placeholder="Password">
                         </div>
-                        <button type="submit" class="btn btn-outline-primary">Sign In</button>
-                        <button type="button" class="btn btn-outline-primary">Register</button>
+                        <button type="submit" class="btn btn-outline-primary" name="signInButton">Sign In</button>
+                        <button type="submit" class="btn btn-outline-primary" name="signUpButton">Register</button>
                     </form>
                 </div>
 
