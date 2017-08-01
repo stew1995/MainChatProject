@@ -3,13 +3,13 @@
  * Created by IntelliJ IDEA.
  * User: Stewart
  * Date: 27/07/2017
- * Time: 15:51
+ * Time: 15:51amber1995chat
  */
 
 $server = "localhost";
 $user = "root";
-$pass = "amber1995";
-$db = "chatproject";
+$pass = "";
+$db = "project";
 
 
 //Connection

@@ -31,18 +31,18 @@
             <!--Top Section-->
             <div class="chatWindow" id="chatWindow">
                 <p>Message</p>
-                <!--PHP file for reading data
-
+                <!--PHP file for reading data-->
 
 
             </div>
+
             <!--Bottom container-->
             <div class="messageContainer">
 
                 <!--Chat container-->
                 <div class="chatContainer">
                     <!--Boostrap form for message-->
-                    <form class="form-horizontal" onsubmit="return sendMessageToAjax();">
+                    <form class="form-horizontal" id="showForm" action="php/fileUpload.php" method="post" enctype="multipart/form-data" >
                         <div class="form-group">
                             <button type="submit" name="submit" class="btn btn-outline-primary sendButton">Send</button>
                             <label class="control-label col-sm-3 sr-only" for="messageInput">Message Input</label>
@@ -60,7 +60,7 @@
                         <!--Hidden file upload-->
                         <div class="form-group">
                             <label class="sr-only"for="fileUpload">File input</label>
-                            <input type="file" id="fileUpload">
+                            <input type="file" id="fileUpload" name="fileUpload">
                             <!-- <p class="help-block">Example block-level help text here.</p>-->
                         </div>
                     </form>
@@ -76,9 +76,10 @@
     </div>
 </div>
 <script src="js/jquery-3.2.1.min.js"></script>
-<script src="js/bootstrap.js"></script>
-<script src="js/main.js"></script>
     <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+    <script src=""></script>
 
 
     <!--Google Maps-->

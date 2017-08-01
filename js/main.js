@@ -7,9 +7,11 @@ $("#fileUpload").hide();
 $(document).ready(function() {
     $("#fileUploadButton").click(function(event) {
         $("#fileUpload").click();
-    });
 
+    });
     $("#chatWindow").load('php/readMessages.php');
+
+
 });
 
 //Google Maps
@@ -81,5 +83,48 @@ function sendMessageToAjax() {
         alert("Fill in all details");
     }
 
-    return false;
+    return true;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
