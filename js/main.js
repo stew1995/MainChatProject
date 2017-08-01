@@ -63,27 +63,65 @@ function handleLocationError(browerHasGeolocation, infoWindow, pos) {
 function sendMessageToAjax() {
     var message = $("#messageInput").val();
     var user = "Stewart";
-
-    if(message != "") {
-        //Loading spinner to go here if used
-        $.ajax({
-            type:'post',
-            url: 'php/sendMessage.php',
-            data: {
-                sendMessageToAjax:"sendMessageToAjax",
-                message:message,
-                userid:user
-            },
-            success: function (response) {
-                //Remove data from field
-                $("#messageInput").val("");
-            }
-        });
+    var img = $("#fileUpload").val();
+    if(img =="") {
+        alert("empty");
+        if(message != "") {
+            //Loading spinner to go here if used
+            $.ajax({
+                type:'post',
+                url: 'php/sendMessage.php',
+                data: {
+                    noimage:"noimage",
+                    message:message,
+                    userid:user
+                },
+                success: function (response) {
+                    //Remove data from field
+                    $("#messageInput").val("");
+                }
+            });
+        } else {
+            alert("Fill in all details");
+        }
     } else {
-        alert("Fill in all details");
-    }
+        if(message != "") {
 
+            $.ajax({
+                type:'post',
+                url: 'php/sendMessage.php',
+                data: {
+                    imagewithtext:"imagewithtext",
+                    message:message,
+                    userid:user
+                },
+                success: function (response) {
+                    //Remove data from field
+                    $("#messageInput").val("");
+                }
+            });
+        }
+    } if(message ==""){
+                //if message is empty an user just wants to send img
+                $.ajax({
+                    type:'post',
+                    url: 'php/sendMessage.php',
+                    data: {
+                        image:"image",
+                        message:message,
+                        userid:user
+                    },
+                    success: function (response) {
+                        //Remove data from field
+                        $("#messageInput").val("");
+                    }
+                });
+
+            }
     return true;
+
+
+
 }
 
 

@@ -42,7 +42,7 @@
                 <!--Chat container-->
                 <div class="chatContainer">
                     <!--Boostrap form for message-->
-                    <form class="form-horizontal" id="showForm" action="php/fileUpload.php" method="post" enctype="multipart/form-data" >
+                    <form class="form-horizontal" id="showForm" action="php/sendMessage.php" method="post" onsubmit="return sendMessageToAjax();" enctype="multipart/form-data" >
                         <div class="form-group">
                             <button type="submit" name="submit" class="btn btn-outline-primary sendButton">Send</button>
                             <label class="control-label col-sm-3 sr-only" for="messageInput">Message Input</label>
