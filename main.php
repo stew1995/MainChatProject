@@ -6,7 +6,7 @@
  * Date: 28/07/2017
  * Time: 18:53
  */
-//session_start();
+session_start();
 ?>
 
 <html lang="en">
@@ -15,10 +15,31 @@
     <title>Main</title>
 
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+
     <link rel="stylesheet" href="css/main.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+
+
+
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">BandArt</a>
+        </div>
+        <form class="navbar-form navbar-left">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="#"><span class="glyphicon"></span>My Profile</a></li>
+        </ul>
+    </div>
+</nav>
 <div class="container-fluid">
     <div class="row">
         <!--Left contanior-->
@@ -42,7 +63,7 @@
                 <!--Chat container-->
                 <div class="chatContainer">
                     <!--Boostrap form for message-->
-                    <form class="form-horizontal" id="showForm" action="php/sendMessage.php" method="post" onsubmit="return sendMessageToAjax();" enctype="multipart/form-data" >
+                    <form class="form-horizontal" id="showForm"  onsubmit="return sendMessageToAjax();" enctype="multipart/form-data" >
                         <div class="form-group">
                             <button type="submit" name="submit" class="btn btn-outline-primary sendButton">Send</button>
                             <label class="control-label col-sm-3 sr-only" for="messageInput">Message Input</label>
@@ -77,7 +98,7 @@
 </div>
 <script src="js/jquery-3.2.1.min.js"></script>
     <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
+<script src="js/bootstrap.js"></script>
 <script src="js/main.js"></script>
     <script src=""></script>
 

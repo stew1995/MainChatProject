@@ -17,7 +17,7 @@ function login() {
             },
             success: function (response) {
                 if(response == "success") {
-                    window.location.href = "index.php";
+                    window.location.href = "main.php";
                 } else {
                     //Loading none
                     alert("Wrong Details");

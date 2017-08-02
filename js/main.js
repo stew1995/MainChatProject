@@ -7,9 +7,19 @@ $("#fileUpload").hide();
 $(document).ready(function() {
     $("#fileUploadButton").click(function(event) {
         $("#fileUpload").click();
+       /*Doesnt work, scroll needs to be at the bottom
+        var div = $("#chatWindow");
+        var height = div[0].scrollHeight;
+        div.scrollTop(height);
+         */
 
     });
-    $("#chatWindow").load('php/readMessages.php');
+
+    setInterval(function() {
+        $("#chatWindow").load('php/readMessages.php');
+
+    }, 5000);
+
 
 
 });
@@ -65,7 +75,7 @@ function sendMessageToAjax() {
     var user = "Stewart";
     var img = $("#fileUpload").val();
     if(img =="") {
-        alert("empty");
+        //alert("empty");
         if(message != "") {
             //Loading spinner to go here if used
             $.ajax({
@@ -85,40 +95,25 @@ function sendMessageToAjax() {
             alert("Fill in all details");
         }
     } else {
-        if(message != "") {
+    //if message is empty an user just wants to send img
+    $.ajax({
+        type:'post',
+        url: 'php/sendMessage.php',
+        data: {
+            image:"image",
+            message:message,
+            userid:user,
+            imgName:img
+        },
+        success: function (response) {
+            //Remove data from field
+            $("#messageInput").val("");
 
-            $.ajax({
-                type:'post',
-                url: 'php/sendMessage.php',
-                data: {
-                    imagewithtext:"imagewithtext",
-                    message:message,
-                    userid:user
-                },
-                success: function (response) {
-                    //Remove data from field
-                    $("#messageInput").val("");
-                }
-            });
         }
-    } if(message ==""){
-                //if message is empty an user just wants to send img
-                $.ajax({
-                    type:'post',
-                    url: 'php/sendMessage.php',
-                    data: {
-                        image:"image",
-                        message:message,
-                        userid:user
-                    },
-                    success: function (response) {
-                        //Remove data from field
-                        $("#messageInput").val("");
-                    }
-                });
+    });
 
-            }
-    return true;
+}
+    return false;
 
 
 

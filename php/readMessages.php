@@ -13,15 +13,15 @@ $sql = "SELECT * FROM `message`";
 if($result = mysqli_query($conn, $sql)) {
     while($row = mysqli_fetch_row($result)) {
 
-        echo "<div class=\"row\">".
-            "<div class=\"col-md-9\">".
+        echo "<div class='outsidebox'><div class=\"row\">".
+            "<div class=\"col-md-8 messageUser\">".
             "{$row[1]}".
-            "</div><div class=\"col-md-3\">".
+            "</div><div class=\"col-md-3 messageDate\">".
             "{$row[3]}".
             "</div>".
-            "<div class=\"col-md-12\">".
+            "<div class=\"col-md-11 messageText\">".
             "{$row[2]}".
-            "</div></div>";
+            "</div></div></div>";
 
     }
     //Free the set

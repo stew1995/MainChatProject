@@ -3,12 +3,14 @@
     background: red;
     position: relative;
     padding: 5px;
+
 }
 
 .chatWindow {
     /*Message input*/
     background: white;
-
+    overflow-y: scroll;
+    height: 900px;
 }
 
 
@@ -42,3 +44,17 @@
     background: grey;
 }
 
+.messageUser {
+    background: darkred;
+}
+.messageDate {
+    background: yellowgreen;
+}
+.messageText {
+    background: pink;
+    padding: 10px 0px;
+}
+
+.outsidebox {
+    margin-left: 20px;
+}
