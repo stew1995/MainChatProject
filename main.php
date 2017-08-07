@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <?php
 /**
  * Created by IntelliJ IDEA.
@@ -7,7 +6,17 @@
  * Time: 18:53
  */
 session_start();
+if(!isset($_SESSION['user_session'])) {
+    header("Location:index.html");
+}
+
+include_once 'php/phpLoginSession/config.php';
+$stmt = $db_con->prepare("SELECT * FROM users WHERE user_id=:uid");
+$stmt->execute(array(":uid"=>$_SESSION['user_session']));
+$row=$stmt->fetch(PDO::FETCH_ASSOC);
 ?>
+<!DOCTYPE html>
+
 
 <html lang="en">
 <head>
@@ -23,6 +32,7 @@ session_start();
 <body>
 
 <div>
+    <strong>Hello <?php echo $_SESSION['user_session']; ?></strong>
     <!-- Nav tabs -->
     <ul class="nav nav-tabs" role="tablist">
         <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>

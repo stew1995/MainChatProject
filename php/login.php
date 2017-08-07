@@ -1,13 +1,13 @@
 <?php
 
-session_start();
+
 if(isset($_POST['login'])) {
 //Database connection
     require_once 'database.php';
 
     $email = $_POST['email'];
     $password = $_POST['password'];
-    $sql = "SELECT * FROM user WHERE email='$email' AND password='$password'";
+    $sql = "SELECT * FROM users WHERE email='$email' AND password='$password'";
     $select_data = mysqli_query($conn,$sql);
 
     if($row = mysqli_fetch_array($select_data)) {
@@ -25,14 +25,15 @@ if(isset($_POST['login'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    $sql = "INSERT INTO user (email, password) VALUES('".$email."', '".$password."')";
+    $sql = "INSERT INTO users (user_name, user_email, user_password) VALUES('stew','$email', '$password')";
 
     if(mysqli_query($conn, $sql)) {
-        echo"success";
+        //Created
+        echo "Created";
     } else {
-        echo "failed";
+        //Error
+        echo "Error"  . mysqli_error($conn);
     }
-    //Close connection
     mysqli_close($conn);
 } else {
     //Error

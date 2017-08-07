@@ -1,61 +1,42 @@
-/**
- * Created by Stewart on 27/07/2017.
- */
-function login() {
-    var email = $("#emailInput").val();
-    var pass = $("#passwordInput").val();
 
-    if(email != "" && pass !="") {
-        //Loading spinner to go here if used
-        $.ajax({
-            type:'post',
-            url: 'php/login.php',
-            data: {
-                login:"login",
-                email:email,
-                password:pass
+$(document).ready(function() {
+    //Validation
+    $("#login-form").validate({
+        rules: {
+            //name of the input fields
+            passwordInput: {
+                required: true,
             },
-            success: function (response) {
-                if(response == "success") {
-                    window.location.href = "main.php";
-                } else {
-                    //Loading none
-                    alert("Wrong Details");
-                }
-            }
-        });
-    } else {
-        alert("Fill in all details");
-    }
+            emailInput: {
+                required: true,
+                email: true
+            },
+        },
+        messages: {
+            passwordInput: {
+                required: "Please enter your password"
+            },
+            emailInput: "Please enter your email address"
+        },
+        submitHandler: submitForm
+    });
 
-    return false;
-}
-
-function register() {
-    var email = $("#emailInput").val();
-    var pass = $("#passwordInput").val();
-
-    if(email != "" && pass !="") {
+    function submitForm() {
+        var data = $("#login-form").serialize();
 
         $.ajax({
-            type:'post',
-            url:'php/login.php',
-            data: {
-                register: "register",
-                email: email,
-                password: pass
-            },
+            type: "POST",
+            url: "php/phpLoginSession/login.php",
+            data: data,
             success: function (response) {
-                if(response == "success") {
-                    window.location.href = "registerConfirm.html";
+                if(response == "ok") {
+                    //Do stuff to enter
+                    $("#bodycontent").load("main.php");
                 } else {
-                    //Loading none
-                    alert("Email already taken");
+                    //Error message
                 }
             }
-        });
-    } else {
-        alert("Fill in all details");
+        })
+        return false;
     }
-
-}
+})
