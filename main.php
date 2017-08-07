@@ -5,11 +5,12 @@
  * Date: 28/07/2017
  * Time: 18:53
  */
-session_start();
+
+/*session_start();
 if(!isset($_SESSION['user_session'])) {
     header("Location:index.html");
 }
-
+*/
 include_once 'php/phpLoginSession/config.php';
 $stmt = $db_con->prepare("SELECT * FROM users WHERE user_id=:uid");
 $stmt->execute(array(":uid"=>$_SESSION['user_session']));
@@ -24,9 +25,10 @@ $row=$stmt->fetch(PDO::FETCH_ASSOC);
     <title>Main</title>
 
     <!-- Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
 
     <link rel="stylesheet" href="css/main.css">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+
 
 </head>
 <body>
@@ -34,20 +36,29 @@ $row=$stmt->fetch(PDO::FETCH_ASSOC);
 <div>
     <strong>Hello <?php echo $_SESSION['user_session']; ?></strong>
     <!-- Nav tabs -->
-    <ul class="nav nav-tabs" role="tablist">
-        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
-        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
-        <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
-        <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
+    <ul class="nav nav-tabs nav-justified">
+        <li><a href="#a" data-toggle="tab">Hello</a></li>
+        <li><a href="#b" data-toggle="tab">World</a></li>
+        <li><a href="#c" data-toggle="tab">Tab C</a></li>
+        <li><a href="#d" data-toggle="tab">Search</a></li>
+
     </ul>
 
-    <!-- Tab panes
-    TODO:Use this to hide different types of the application -->
     <div class="tab-content">
-        <div role="tabpanel" class="tab-pane active" id="home">...</div>
-        <div role="tabpanel" class="tab-pane" id="profile">Hello</div>
-        <div role="tabpanel" class="tab-pane" id="messages">...</div>
-        <div role="tabpanel" class="tab-pane" id="settings">...</div>
+        <div class="tab-pane active" id="a">AAA</div>
+        <div class="tab-pane" id="b">BBB</div>
+        <div class="tab-pane" id="c">CCC</div>
+        <div class="tab-pane" id="d">
+            <div class="form-group">
+                <label class="control-label sr-only" for="inputGroupSuccess1">Input group with success</label>
+                <div class="input-group">
+                    <input type="text" class="form-control" id="inputGroupSuccess1" aria-describedby="inputGroupSuccess1Status">
+                    <span class="input-group-addon">@</span>
+                </div>
+                <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+                <span id="inputGroupSuccess1Status" class="sr-only">(success)</span>
+            </div>
+        </div>
     </div>
 
 </div>
@@ -109,9 +120,9 @@ $row=$stmt->fetch(PDO::FETCH_ASSOC);
     </div>
 </div>
 <!--<script src="js/jquery-3.2.1.min.js"></script>-->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
 <!--<script src="js/bootstrap.min.js"></script>-->
 <script src="js/main.js"></script>
     <!--<script src=""></script>-->

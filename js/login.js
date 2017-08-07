@@ -31,7 +31,10 @@ $(document).ready(function() {
             success: function (response) {
                 if(response == "ok") {
                     //Do stuff to enter
-                    $("#bodycontent").load("main.php");
+
+                    setTimeout(' window.location.href ="main.php"; ',4000);
+                    //window.location.href ="main.php";
+                    //$("#bodycontent").load("main.php");
                 } else {
                     //Error message
                 }

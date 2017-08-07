@@ -5,6 +5,7 @@
  * Date: 07/08/2017
  * Time: 08:02
  */
+
 session_start();
 
 require_once 'config.php';
@@ -26,6 +27,8 @@ if(isset($_POST['signInButton'])) {
         if($row['user_password'] == $password) {
             echo "ok";
             $_SESSION['user_session'] = $row['user_id'];
+            session_write_close();
+
         } else {
             echo "email or password doesnt match on the system";
         }
@@ -35,3 +38,4 @@ if(isset($_POST['signInButton'])) {
 }
 //Here do an else for the sign up button
 //TODO:
+?>
