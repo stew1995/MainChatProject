@@ -18,28 +18,30 @@ session_start();
 
     <link rel="stylesheet" href="css/main.css">
     <link href="css/bootstrap.min.css" rel="stylesheet">
+
 </head>
 <body>
 
+<div>
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
+        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
+        <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
+        <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
+    </ul>
 
-
-
-<nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="#">BandArt</a>
-        </div>
-        <form class="navbar-form navbar-left">
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="Search">
-            </div>
-            <button type="submit" class="btn btn-default">Submit</button>
-        </form>
-        <ul class="nav navbar-nav navbar-right">
-            <li><a href="#"><span class="glyphicon"></span>My Profile</a></li>
-        </ul>
+    <!-- Tab panes
+    TODO:Use this to hide different types of the application -->
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="home">...</div>
+        <div role="tabpanel" class="tab-pane" id="profile">Hello</div>
+        <div role="tabpanel" class="tab-pane" id="messages">...</div>
+        <div role="tabpanel" class="tab-pane" id="settings">...</div>
     </div>
-</nav>
+
+</div>
+
 <div class="container-fluid">
     <div class="row">
         <!--Left contanior-->
@@ -96,11 +98,13 @@ session_start();
         </div>
     </div>
 </div>
-<script src="js/jquery-3.2.1.min.js"></script>
+<!--<script src="js/jquery-3.2.1.min.js"></script>-->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
-<script src="js/bootstrap.js"></script>
+<!--<script src="js/bootstrap.min.js"></script>-->
 <script src="js/main.js"></script>
-    <script src=""></script>
+    <!--<script src=""></script>-->
 
 
     <!--Google Maps-->

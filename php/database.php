@@ -8,8 +8,8 @@
 
 $server = "localhost";
 $user = "root";
-$pass = "";
-$db = "project";
+$pass = "amber1995";
+$db = "chatproject";
 
 
 //Connection
