@@ -24,6 +24,7 @@ $(document).ready(function() {
 
 });
 
+
 //Google Maps
 function initMap() {
     var portsmouth = {lat: 50.8185466, lng: -1.1678308};
@@ -119,9 +120,25 @@ function sendMessageToAjax() {
 
 }
 
+// delay
 
 
 
+$('#searchbar').keyup(function() {
+    var term = $("#searchbar").val();
+    if(term != "") {
+        var URL = encodeURI("php/search.php?q=" + term);
+        $.ajax({
+            url: URL,
+            type: "GET",
+            success: function (response) {
+                $("#livesearch").html(response);
+            }
+        });
+    } else {
+        //empty text field
+    }
+})
 
 
 

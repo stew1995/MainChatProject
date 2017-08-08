@@ -49,15 +49,17 @@ $row=$stmt->fetch(PDO::FETCH_ASSOC);
         <div class="tab-pane" id="b">BBB</div>
         <div class="tab-pane" id="c">CCC</div>
         <div class="tab-pane" id="d">
-            <div class="form-group">
-                <label class="control-label sr-only" for="inputGroupSuccess1">Input group with success</label>
-                <div class="input-group">
-                    <input type="text" class="form-control" id="inputGroupSuccess1" aria-describedby="inputGroupSuccess1Status">
-                    <span class="input-group-addon">@</span>
+            <form action="post">
+                <div class="form-group">
+                    <label class="control-label sr-only" for="searchbar">Input group with success</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="searchbar" id="searchbar" aria-describedby="inputGroupSuccess1Status" >
+                        <span class="input-group-addon">@</span>
+                    </div>
+                    <span id="inputGroupSuccess1Status" class="sr-only">(success)</span>
                 </div>
-                <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
-                <span id="inputGroupSuccess1Status" class="sr-only">(success)</span>
-            </div>
+            </form>
+            <div id="livesearch"></div>
         </div>
     </div>
 
@@ -120,9 +122,11 @@ $row=$stmt->fetch(PDO::FETCH_ASSOC);
     </div>
 </div>
 <!--<script src="js/jquery-3.2.1.min.js"></script>-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="js/jquery-3.2.1.min.js"></script>
 <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/transition.min.js"></script>
+
 <!--<script src="js/bootstrap.min.js"></script>-->
 <script src="js/main.js"></script>
     <!--<script src=""></script>-->
