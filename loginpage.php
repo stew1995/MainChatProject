@@ -1,24 +1,32 @@
 <?php
-/**
- * Created by IntelliJ IDEA.
- * User: stewart
- * Date: 07/08/2017
- * Time: 18:38
- */
+
+require_once 'php/phpLoginSession/config.php';
 
 session_start();
+
+
+//Button if set
+if(isset($_POST['signInButton'])) {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    //Using md5 puts the password into a hash
+    $sql = "SELECT * FROM users WHERE email='$email' AND password='$password'";
+    $select_data = mysqli_query($conn,$sql);
+
+    if(mysqli_num_rows($select_data)==1) {
+        echo "User Exists";
+
+        $_SESSION['user'] = $email;
+    }
+}
 ?>
-<!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>index</title>
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/index.css">
-</head>
-<body id="bodycontent">
+    <title>Login</title>
 
+</head>
+<body>
 <div class="container-fluid">
     <div class="row">
         <!--Main section container -->
@@ -47,7 +55,7 @@ session_start();
                                 <label for="passwordInput">Password</label>
                                 <input type="password" class="form-control" name="passwordInput" id="passwordInput" placeholder="Password">
                             </div>
-                            <button type="submit" class="btn btn-outline-primary" name="signInButton" id="signInButton">Sign In</button>
+                            <button type="submit" class="btn btn-outline-primary" name="signInButton">Sign In</button>
                             <button type="submit" class="btn btn-outline-primary" name="signUpButton">Register</button>
                         </form>
                     </div>
@@ -61,18 +69,6 @@ session_start();
 
 
 </div>
-
-
-
-
-
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="js/jquery-3.2.1.min.js"></script>
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-
 <script src="js/login.js"></script>
 </body>
-</html>

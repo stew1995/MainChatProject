@@ -4,7 +4,9 @@
 $("#fileUpload").hide();
 
 
+
 $(document).ready(function() {
+    $("#body").load("php/pages/chat.html");
     $("#fileUploadButton").click(function(event) {
         $("#fileUpload").click();
        /*Doesnt work, scroll needs to be at the bottom
@@ -17,19 +19,14 @@ $(document).ready(function() {
 
     setInterval(function() {
         $("#chatWindow").load('php/readMessages.php');
-
     }, 5000);
-
-
-
 });
-
 
 //Google Maps
 function initMap() {
     var portsmouth = {lat: 50.8185466, lng: -1.1678308};
     var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 10,
+        zoom: 15,
         center: portsmouth
     });
     var marker = new google.maps.Marker({
@@ -116,12 +113,9 @@ function sendMessageToAjax() {
 }
     return false;
 
-
-
 }
 
 // delay
-
 
 
 $('#searchbar').keyup(function() {
@@ -140,6 +134,16 @@ $('#searchbar').keyup(function() {
     }
 })
 
+//Tabs + AJAX
+$('#a').click(function (e) {
+    $("#body").load("php/pages/chat.html");
+});
+$('#b').click(function (e) {
+    $("#body").load("php/pages/calender.php");
+});
+$('#c').click(function (e) {
+    $("#body").load("php/pages/map.php");
+});
 
 
 

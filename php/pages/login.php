@@ -1,24 +1,8 @@
-<?php session_start();?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>index</title>
-    <!-- Bootstrap -->
-    <!-- Bootstrap -->
-    <!-- Bootstrap -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
-
-    <link rel="stylesheet" href="css/main.css">
-
-    <link rel="stylesheet" href="css/index.css">
-
-
-</head>
-<body>
 <?php
+session_start();
+$session = $_SESSION['user_session'];
+require_once 'config.php';
 
-require_once 'php/phpLoginSession/config.php';
 
 //Button if set
 if(isset($_POST['signInButton'])) {
@@ -26,16 +10,30 @@ if(isset($_POST['signInButton'])) {
     $password = $_POST['password'];
 
     //Using md5 puts the password into a hash
-    $sql = "SELECT * FROM users WHERE email='$email' AND password='$password'";
-    $select_data = mysqli_query($conn,$sql);
 
-    if(mysqli_num_rows($select_data)==1) {
-        echo "User Exists";
+    try {
+        $stmt = $db_con->prepare("SELECT * FROM users WHERE email=:email");
+        $stmt->execute(array(":email"=>$email));
+        $row = $stmt -> fetch(PDO::FETCH_ASSOC);
+        $count = $stmt -> rowCount();
 
-        $_SESSION['user'] = $email;
+        if($row['password'] == $password) {
+            echo "ok";
+            $session = $row['ID'];
+            session_write_close();
+
+        } else {
+            echo "email or password doesnt match on the system";
+        }
+    } catch(PDOException $e) {
+        echo $e->getMessage();
     }
-}
-?>
+}?>
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
 <div class="container-fluid">
     <div class="row">
         <!--Main section container -->
@@ -78,23 +76,6 @@ if(isset($_POST['signInButton'])) {
 
 
 </div>
-
-
-
-
-
-
-
-
-<script src="js/jquery-3.2.1.min.js"></script>
-
-
-<script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
-<script src="js/bootstrap.js"></script>
-<script src="js/transition.min.js"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
 <script src="js/login.js"></script>
-
-
-
 </body>
-</html>

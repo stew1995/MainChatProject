@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat</title>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <!--Left contanior-->
+        <div class="col-md-2">
+
+
+        </div>
+        <!--Center contanior-->
+        <div class="col-md-8 centerWindow">
+            <!--Top Section-->
+            <div class="chatWindow" id="chatWindow">
+                <p>Message</p>
+                <!--PHP file for reading data-->
+
+
+            </div>
+
+            <!--Bottom container-->
+            <div class="messageContainer">
+
+                <!--Chat container-->
+                <div class="chatContainer">
+                    <!--Boostrap form for message-->
+                    <form class="form-horizontal" id="showForm"  onsubmit="return sendMessageToAjax();" enctype="multipart/form-data" >
+                        <div class="form-group">
+                            <button type="submit" name="submit" class="btn btn-outline-primary sendButton">Send</button>
+                            <label class="control-label col-sm-3 sr-only" for="messageInput">Message Input</label>
+                            <div class="col-md-10">
+                                <!--Input Field-->
+                                <div class="input-group">
+                                    <input type="text" name="messageInput" class="form-control" id="messageInput" aria-describedby="inputGroupSuccess2Status">
+                                    <span class="input-group-addon" id="fileUploadButton">@</span>
+                                </div>
+                                <!--Image button for upload-->
+                                <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+                                <span id="inputGroupSuccess2Status" class="sr-only">(success)</span>
+                            </div>
+                        </div>
+                        <!--Hidden file upload-->
+                        <div class="form-group">
+                            <label class="sr-only"for="fileUpload">File input</label>
+                            <input type="file" id="fileUpload" name="fileUpload">
+                            <!-- <p class="help-block">Example block-level help text here.</p>-->
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+        <!--Right contanior-->
+        <div class="col-md-2">
+
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

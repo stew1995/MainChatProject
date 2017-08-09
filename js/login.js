@@ -1,7 +1,9 @@
 
 $(document).ready(function() {
+
+
     //Validation
-    $("#login-form").validate({
+   /* $("#login-form").validate({
         rules: {
             //name of the input fields
             passwordInput: {
@@ -19,9 +21,9 @@ $(document).ready(function() {
             emailInput: "Please enter your email address"
         },
         submitHandler: submitForm
-    });
+    });*/
 
-    function submitForm() {
+    $("#login-form").submit(function () {
         var data = $("#login-form").serialize();
 
         $.ajax({
@@ -29,17 +31,11 @@ $(document).ready(function() {
             url: "php/phpLoginSession/login.php",
             data: data,
             success: function (response) {
-                if(response == "ok") {
-                    //Do stuff to enter
-
-                    setTimeout(' window.location.href ="main.php"; ',4000);
-                    //window.location.href ="main.php";
-                    //$("#bodycontent").load("main.php");
-                } else {
-                    //Error message
-                }
+                $("body").load("main.php");
             }
-        })
+        });
         return false;
-    }
+    })
+
+
 })

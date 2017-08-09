@@ -17,8 +17,13 @@ if(isset($_GET['q'])) {
     $query = mysqli_query($conn, $sql);
 
     $result_count = mysqli_num_rows($query);
+    //Table header
+    echo "<table class='table table-hover'>";
+    echo "<th class='info'>User</th><th class='info'>Message</th><th class='info'>Time</th>";
     while ($row = mysqli_fetch_assoc($query)) {
-        echo $row['message'].'<br />';
+        echo "<tr><td>".$row['user']."</td><td>".$row['message']."</td><td>".$row['time_sent']."</td></tr>";
+        //echo "<div class='well'>".$row['message']."</div>";
+        //echo "User:".$row['user']." ".$row['message'].'<br />';
     }
 } else {
     echo "";

@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0825800d-700d-4649-be74-83720bf1fe6a" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/php/login/config.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/main.css" afterPath="$PROJECT_DIR$/css/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/login.js" afterPath="$PROJECT_DIR$/js/login.js" />
@@ -10,6 +12,8 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.php" afterPath="$PROJECT_DIR$/main.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/readMessages.php" afterPath="$PROJECT_DIR$/php/readMessages.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/sendMessage.php" afterPath="$PROJECT_DIR$/php/sendMessage.php" />
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
     </list>
@@ -29,11 +33,21 @@
       <content type="file-editors">
         <state>
           <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-            <file leaf-file-name="main.css" pinned="false" current-in-tab="true">
+            <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/css/main.css">
                 <provider selected="true" editor-type-id="text-editor">
                   <state relative-caret-position="986">
                     <caret line="58" column="19" lean-forward="false" selection-start-line="58" selection-start-column="19" selection-end-line="58" selection-end-column="19" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="database.php" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/php/database.php">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="85">
+                    <caret line="5" column="27" lean-forward="false" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
                     <folding />
                   </state>
                 </provider>
@@ -129,7 +143,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sendMessage.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="sendMessage.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/php/sendMessage.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="221">
@@ -137,6 +151,16 @@
               <folding>
                 <marker date="1501671952959" expanded="true" signature="263:326" ph="INSERT INTO message... " />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/php/login/config.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="442">
+              <caret line="26" column="50" lean-forward="false" selection-start-line="26" selection-start-column="50" selection-end-line="26" selection-end-column="50" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -178,6 +202,7 @@
         <option value="$PROJECT_DIR$/php/login.php" />
         <option value="$PROJECT_DIR$/js/login.js" />
         <option value="$PROJECT_DIR$/php/sendMessage.php" />
+        <option value="$PROJECT_DIR$/php/login/config.php" />
       </list>
     </option>
   </component>
@@ -692,19 +717,27 @@
       <workItem from="1501521397172" duration="2832000" />
       <workItem from="1501583296850" duration="10916000" />
       <workItem from="1501603423033" duration="3681000" />
+<<<<<<< Updated upstream
       <workItem from="1501668373786" duration="3151000" />
 =======
       <workItem from="1501521397172" duration="3063000" />
       <workItem from="1502086370883" duration="33000" />
+>>>>>>> Stashed changes
+=======
+      <workItem from="1501668373786" duration="4595000" />
 >>>>>>> Stashed changes
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     <option name="totallyTimeSpent" value="43818000" />
 =======
     <option name="totallyTimeSpent" value="26334000" />
+>>>>>>> Stashed changes
+=======
+    <option name="totallyTimeSpent" value="45262000" />
 >>>>>>> Stashed changes
   </component>
   <component name="ToolWindowManager">
@@ -757,13 +790,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/registerConfirm.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/registerConfirm.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -1050,6 +1076,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/php/database.php">
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< Updated upstream
@@ -1063,6 +1090,8 @@
         </state>
       </provider>
     </entry>
+=======
+>>>>>>> Stashed changes
     <entry file="file://$PROJECT_DIR$/php/fileUpload.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -1186,6 +1215,22 @@
           <folding>
             <marker date="1501671952959" expanded="true" signature="263:326" ph="INSERT INTO message... " />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/database.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="27" lean-forward="false" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/login/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="50" lean-forward="false" selection-start-line="26" selection-start-column="50" selection-end-line="26" selection-end-column="50" />
+          <folding />
         </state>
       </provider>
     </entry>
