@@ -58,3 +58,12 @@
 .outsidebox {
     margin-left: 20px;
 }
+
+#livesearch {
+    position:absolute;
+    top: 96px;
+    left: 2%;
+    z-index: 100;
+    background: #5bc0de;
+    width: 96%;
+}
