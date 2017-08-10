@@ -22,51 +22,6 @@ $(document).ready(function() {
     }, 5000);
 });
 
-//Google Maps
-function initMap() {
-    var portsmouth = {lat: 50.8185466, lng: -1.1678308};
-    var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 15,
-        center: portsmouth
-    });
-    var marker = new google.maps.Marker({
-        position: portsmouth,
-        map: map
-    });
-
-    infoWindow = new google.maps.InfoWindow;
-
-    //Locations
-    //TODO: LOcation shows in london not my location
-    if(navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function (position) {
-            //The logation in lat and lng
-            var pos =  {
-                lat: position.coords.latitude,
-                lng: position.coords.longitude
-        };
-            //Info window
-            infoWindow.setPosition(pos);
-            infoWindow.setContent("Location");
-            infoWindow.open(map);
-            map.setCenter(pos);
-        }, function () {
-            //Error
-            handleLocationError(true, infoWindow, map.getCenter());
-        });
-    } else {
-        //Doesnt support
-        handleLocationError(false, infoWindow, map.getCenter());
-    }
-}
-
-function handleLocationError(browerHasGeolocation, infoWindow, pos) {
-    infoWindow.setPosition(pos);
-    infoWindow.setContent(browserHasGeolocation ?
-        'Error: The Geolocation service failed.' :
-        'Error: Your browser doesn\'t support geolocation.');
-    infoWindow.open(map);
-}
 
 function sendMessageToAjax() {
     var message = $("#messageInput").val();
