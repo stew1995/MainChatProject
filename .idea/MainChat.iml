@@ -11,5 +11,16 @@
     <orderEntry type="library" name="bootstrap" level="application" />
     <orderEntry type="library" name="transition.min" level="application" />
     <orderEntry type="library" name="jquery-3.2.1.min" level="application" />
+    <orderEntry type="module-library">
+      <library name="PHARS">
+        <CLASSES>
+          <root url="phar://$MODULE_DIR$/php/Calender/composer.phar/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="phar://$MODULE_DIR$/php/Calender/composer.phar/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
   </component>
 </module>

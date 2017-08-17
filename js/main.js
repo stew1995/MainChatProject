@@ -97,7 +97,7 @@ $('#b').click(function (e) {
     $("#body").load("php/pages/calender.php");
 });
 $('#c').click(function (e) {
-    $("#body").load("php/pages/map.php");
+    $("#body").load("map.php");
 });
 
 

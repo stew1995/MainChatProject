@@ -36,7 +36,7 @@ function initMap() {
     }
 
     //SQL AND PHP
-    downloadUrl('php/mapStorage.php', function(data) {
+    downloadURL('php/mapStoarge.php', function(data) {
         var xml = data.responseXML;
         var markers = xml.documentElement.getElementsByTagName('marker');
         Array.prototype.forEach.call(markers, function(markerElem) {
@@ -87,7 +87,7 @@ function downloadURL(url, callback) {
 
     request.onreadystatechange = function() {
         if (request.readyState == 4) {
-            request.onreadystatechange = doNothing;
+            request.onreadystatechange = "";
             callback(request, request.status);
         }
     };

@@ -28,13 +28,26 @@ if(isset($_SESSION['user'])) {
 <div>
     <strong>Hello <?php echo $_SESSION['user']; ?></strong>
     <!-- Nav tabs -->
-    <ul class="nav nav-tabs nav-justified">
-        <li><a id="a" data-toggle="tab">Chat</a></li>
-        <li><a id="b" data-toggle="tab">Calender</a></li>
-        <li><a id="c" data-toggle="tab">Map</a></li>
-        <li><a href="#d" data-toggle="tab">Search</a></li>
+
+    <ul class="nav nav-pills nav-fill">
+        <li class="nav-item"><a class="nav-link " href="#d" data-toggle="tab">Search</a></li>
+        <li class="nav-item"><a class="nav-link active" id="a" data-toggle="tab">Chat</a></li>
+        <li class="nav-item"><a class="nav-link " id="c" data-toggle="tab">Map</a></li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Calender</a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" id="b" data-toggle="tab">Create Event</a>
+                <a class="dropdown-item" href="#">View Event</a>
+                <a class="dropdown-item" href="#">...</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Settings</a>
+            </div>
+        </li>
+
+
 
     </ul>
+
 
     <div class="tab-content">
         <div class="tab-pane" id="d">
