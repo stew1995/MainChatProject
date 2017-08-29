@@ -15,9 +15,10 @@
 <body>
 
 <div class="row">
-    <div class="col-6 col-md-4">
+    <div class="col-6 col-md-4 calenderFormContainor">
 
-        <div class="col-md-8 inputContanor">
+        <div class="col-md-12 inputContanor">
+            <h2>Create Event....</h2>
             <form class="">
                 <div class="form-row">
                     <div class="form-group col-md-12">
@@ -37,15 +38,17 @@
                     </div>
                 </div>
                 <div class="form-row">
-                    <div class="form-group col-md-4">
+                    <div class="form-group col-md-12">
                         <label for="inputAddress" class="col-form-label">Address</label>
                         <input type="text" class="form-control form-control-sm" id="inputAddress" placeholder="Address">
                     </div>
-                    <div class="form-group col-md-4">
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
                         <label   for="inputAddress" class="col-form-label">Start: </label>
                         <input type="datetime-local" class="form-control form-control-sm" id="inputStart" placeholder="Start Date">
                     </div>
-                    <div class="form-group col-md-4">
+                    <div class="form-group col-md-6">
                         <label  for="inputAddress" class="col-form-label">End: </label>
                         <input type="datetime-local" class="form-control form-control-sm" id="inputEnd">
                     </div>
@@ -68,6 +71,7 @@
                         </select>
                     </div>
                 </form-row>
+                <div class="form-row">
                 <label class="mr-sm-2" for="inlineFormCustomSelectPref">Recurrence</label>
                 <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelectPref">
                     <option selected>Choose...</option>
@@ -79,6 +83,7 @@
                     <option value="3">6</option>
                     <option value="3">7</option>
                 </select>
+                </div>
                 <div class="form-row">
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
@@ -86,14 +91,17 @@
         </div>
 
     </div>
-    <div class="col-12 col-md-8">.col-12 .col-md-8</div>
+    <div class="col-12 col-md-8">
+
+        <!--Calender embed-->
+        <iframe src="https://calendar.google.com/calendar/embed?src=swflack%40gmail.com&ctz=Europe/London" style="border: 0" width="900" height="800" frameborder="0" scrolling="no"></iframe>
+    </div>
 
 </div>
 
 
 
 
-//TODO: get the google calender api
 <script src="js/mapjs.js"></script>
 
 </body>

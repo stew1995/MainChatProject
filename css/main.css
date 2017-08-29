@@ -24,7 +24,7 @@
 }
 
 .chatContainer {
-    background: white;
+    background: lightgray;
     width: 97%;
     margin: 12.5px 1.5%;
 }
@@ -41,19 +41,35 @@
     background: grey;
 }
 
+/*Message content*/
+
+.messagebox {
+    margin: 5px 7.5%;
+}
 .messageUser {
-    background: darkred;
+    background: #00BCD4; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#00BCD4, #B2EBF2); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#00BCD4, #B2EBF2); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#00BCD4, #B2EBF2); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#00BCD4, #B2EBF2); /* Standard syntax */
 }
 .messageDate {
-    background: yellowgreen;
+    background: #00BCD4; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#00BCD4, #B2EBF2); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#00BCD4, #B2EBF2); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#00BCD4, #B2EBF2); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#00BCD4, #B2EBF2); /* Standard syntax */
 }
 .messageText {
-    background: pink;
+    background: #ECEFF1;
     padding: 10px 0px;
 }
 
 .outsidebox {
     margin-left: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background: lightgray;
 }
 
 #livesearch {
@@ -65,4 +81,12 @@
     background: white;
     max-height: 250px;
     overflow-y: auto;
+}
+
+{
+    background: #ECEFF1; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#ECEFF1, white); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#ECEFF1, white); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#ECEFF1, white); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#ECEFF1, white); /* Standard syntax */
 }

@@ -12,8 +12,8 @@ $sql = "SELECT * FROM `message`";
 
 if($result = mysqli_query($conn, $sql)) {
     while($row = mysqli_fetch_row($result)) {
-
-        echo "<div class='outsidebox'><div class=\"row\">".
+//Old message layout to check if working
+ /*       echo "<div class='outsidebox'><div class=\"row\">".
             "<div class=\"col-md-8 messageUser\">".
             "{$row[1]}".
             "</div><div class=\"col-md-3 messageDate\">".
@@ -22,6 +22,20 @@ if($result = mysqli_query($conn, $sql)) {
             "<div class=\"col-md-11 messageText\">".
             "{$row[2]}".
             "</div></div></div>";
+*/
+
+           echo "<div class='card w-85  messagebox'>".
+                    "<div class='card-header messageUser text-white '>".
+            "{$row[1]}".
+                    "</div>".
+                    "<div class='card-body'>".
+                        "<p class='card-text'>".
+               "{$row[2]}".
+               "</p>".
+                        "<div class='dropdown-divider'></div>".
+                        "<p class='card-text'><small class='text-muted'>".
+               "posted such and such ago".
+                "</small></p></div></div>";
 
     }
     //Free the set

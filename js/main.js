@@ -1,25 +1,13 @@
 /**
  * Created by stewart on 29/07/2017.
  */
-$("#fileUpload").hide();
-
-
-
 $(document).ready(function() {
     $("#body").load("php/pages/chat.html");
-    $("#fileUploadButton").click(function(event) {
-        $("#fileUpload").click();
-       /*Doesnt work, scroll needs to be at the bottom
-        var div = $("#chatWindow");
-        var height = div[0].scrollHeight;
-        div.scrollTop(height);
-         */
-
-    });
-
+    $("#imageWindow").load('php/showImages.php');
     setInterval(function() {
         $("#chatWindow").load('php/readMessages.php');
-    }, 5000);
+
+    }, 2000);
 });
 
 
